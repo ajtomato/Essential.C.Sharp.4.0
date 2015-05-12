@@ -7,9 +7,20 @@ namespace HelloWorld
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             System.Console.WriteLine("Hello world");
+
+            // Only the command line arguments are included.
+            foreach (string arg in args)
+            {
+                System.Console.WriteLine(arg);
+            }
+
+            // The full command.
+            System.Console.WriteLine(System.Environment.CommandLine);
+
+            return 0;
         }
     }
 }
