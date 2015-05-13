@@ -20,6 +20,10 @@ namespace HelloWorld
             // The full command.
             System.Console.WriteLine(System.Environment.CommandLine);
 
+            System.Console.Write("Please input something: ");
+            String inputStr = System.Console.ReadLine();
+            System.Console.WriteLine("The input string is {0}", inputStr);
+
             return 0;
         }
     }
