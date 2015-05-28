@@ -88,6 +88,48 @@ namespace HelloWorld
             }
         }
 
+        static void TestParse()
+        {
+            try
+            {
+                int j = 0;
+                if (int.TryParse("100", out j))
+                {
+                    System.Console.WriteLine("TryParse is successful.");
+                }
+                else
+                {
+                    System.Console.WriteLine("TryParse is failed.");
+                }
+                if (int.TryParse("abc", out j))
+                {
+                    System.Console.WriteLine("TryParse is successful.");
+                }
+                else
+                {
+                    System.Console.WriteLine("TryParse is failed.");
+                }
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine("Parse error exception is caught.");
+            }
+
+            try
+            {
+                int i = int.Parse("100");
+                float f = float.Parse("0.99");
+                System.Console.WriteLine("fundamentalType.Parse(string): " + i + ", " + f);
+
+                int j = int.Parse("abc");
+                System.Console.WriteLine("No exception for parse error");
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine("Parse error exception is caught.");
+            }
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -99,7 +141,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestCastException();
+            TestParse();
 
             return 0;
         }
