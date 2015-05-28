@@ -58,6 +58,15 @@ namespace HelloWorld
             System.Console.Write("A cross platform new line" + System.Environment.NewLine);
         }
 
+        static void TestNullableModifier()
+        {
+            int? i = null;
+            if (i == null)
+            {
+                System.Console.WriteLine("? can be used after the value type as a nullable modifier, e.g., int?");
+            }
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -69,7 +78,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestFundamentalTypes();
+            TestNullableModifier();
 
             return 0;
         }
