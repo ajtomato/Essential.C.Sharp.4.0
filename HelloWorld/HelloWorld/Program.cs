@@ -67,6 +67,27 @@ namespace HelloWorld
             }
         }
 
+        static void TestCastException()
+        {
+            try
+            {
+                long l = System.Int64.MaxValue;
+                int i = (int)l;
+                System.Console.WriteLine("Cast: " + l + " => " + i);
+                System.Console.WriteLine("There is no exception for cast error without checked block.");
+
+                checked
+                {
+                    i = (int)l;
+                    System.Console.WriteLine("There is no exception for cast error with checked block.");
+                }
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine("A cast exception is caught: " + e);
+            }
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -78,7 +99,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestNullableModifier();
+            TestCastException();
 
             return 0;
         }
