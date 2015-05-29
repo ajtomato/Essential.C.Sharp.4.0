@@ -130,6 +130,57 @@ namespace HelloWorld
             }
         }
 
+        class ArrayItem
+        {
+            public ArrayItem()
+            {
+                System.Console.WriteLine("ArrayItem Construction");
+            }
+        }
+
+        static void TestArray()
+        {
+            string[] array1 = new string[] { "Hello", "World" };
+            string[] array2 = new string[3];
+
+            foreach (string s in array2)
+            {
+                if (s == null)
+                {
+                    System.Console.WriteLine("new string[cnt] does NOT create the real string.");
+                    break;
+                }
+            }
+
+            ArrayItem[] array3 = new ArrayItem[4];
+            foreach (ArrayItem arrayItem in array3)
+            {
+                if (arrayItem == null)
+                {
+                    System.Console.WriteLine("new ArrayItem[cnt] does NOT create the real string.");
+                    break;
+                }
+            }
+
+            int[,] array4 = new int[3, 3];
+            System.Console.WriteLine("DataType[,] means the size of subarray is fixed.");
+
+            int[][] array5; // jagged array
+            array5 = new int[3][];
+            for (int i = 0; i < 3; ++ i)
+            {
+                array5[i] = new int[i + 1];
+            }
+            System.Console.WriteLine("DataType[][] means the size of subarray is flexible.");
+
+            // String => char array
+            string s1 = "hello world";
+            char[] array6 = s1.ToCharArray();
+            System.Array.Reverse(array6);
+            s1 = new string(array6);
+            System.Console.WriteLine("A method to reverse a string: string => char array => reverse => string: " + s1);
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -141,7 +192,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestParse();
+            TestArray();
 
             return 0;
         }
