@@ -186,6 +186,12 @@ namespace HelloWorld
             System.Diagnostics.Trace.Assert(false);
         }
 
+        static void TestNullCoalescingOperator()
+        {
+            string s1 = null;
+            System.Console.WriteLine(s1 ?? "s1 is null.");
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -197,7 +203,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestAssert();
+            TestNullCoalescingOperator();
 
             return 0;
         }
