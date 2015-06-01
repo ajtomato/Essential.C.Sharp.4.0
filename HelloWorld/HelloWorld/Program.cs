@@ -181,6 +181,11 @@ namespace HelloWorld
             System.Console.WriteLine("A method to reverse a string: string => char array => reverse => string: " + s1);
         }
 
+        static void TestAssert()
+        {
+            System.Diagnostics.Trace.Assert(false);
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -192,7 +197,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestArray();
+            TestAssert();
 
             return 0;
         }
