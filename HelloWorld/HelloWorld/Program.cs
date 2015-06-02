@@ -204,6 +204,27 @@ namespace HelloWorld
             }
         }
 
+        static void TestSwitch()
+        {
+            string[] strArray = { "a", "b", "q", "c" };
+
+            foreach (string s in strArray)
+            {
+                switch (s)
+                {
+                    case "a":
+                    case "b":
+                        // The statement cannot be inserted here without break/continue.
+                    case "c":
+                        System.Console.WriteLine("Hit: " + s);
+                        break;
+                    default:
+                        System.Console.WriteLine("Not hit");
+                        continue;
+                }
+            }
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -215,7 +236,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestForeach();
+            TestSwitch();
 
             return 0;
         }
