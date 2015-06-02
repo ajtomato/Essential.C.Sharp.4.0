@@ -192,6 +192,18 @@ namespace HelloWorld
             System.Console.WriteLine(s1 ?? "s1 is null.");
         }
 
+        static void TestForeach()
+        {
+            int[] array = { 0, 1 };
+
+            foreach (int i in array)
+            {
+                // i += 5;
+                System.Console.WriteLine("The compiler prevents the modification of iteration variable.");
+                break;
+            }
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -203,7 +215,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestNullCoalescingOperator();
+            TestForeach();
 
             return 0;
         }
