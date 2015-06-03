@@ -117,7 +117,7 @@ namespace HelloWorld
             }
             catch (Exception e)
             {
-                System.Console.WriteLine("Parse error exception is caught.");
+                System.Console.WriteLine("Parse error exception is caught: " + e.ToString());
             }
 
             try
@@ -131,7 +131,7 @@ namespace HelloWorld
             }
             catch (Exception e)
             {
-                System.Console.WriteLine("Parse error exception is caught.");
+                System.Console.WriteLine("Parse error exception is caught: " + e.ToString());
             }
         }
 
