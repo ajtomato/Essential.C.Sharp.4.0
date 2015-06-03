@@ -1,4 +1,8 @@
-﻿using System;
+﻿// #define TEST_SYMBOL 1   Macro is NOT supported.
+
+#define TEST_SYMBOL
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -224,6 +228,9 @@ namespace HelloWorld
                 }
             }
         }
+
+#if TEST_SYMBOL // #if 1 is NOT supported. It must be #if SYMBOL
+#endif
 
         static int Main(string[] args)
         {
