@@ -244,7 +244,10 @@ namespace HelloWorld
         static int Main(string[] args)
         {
             // The full command.
-            System.Console.WriteLine(System.Environment.CommandLine);
+            if (System.Environment.GetCommandLineArgs().Length > 1)
+            {
+                System.Console.WriteLine(System.Environment.CommandLine);
+            }
 
             // Only the command line arguments are included.
             foreach (string arg in args)
