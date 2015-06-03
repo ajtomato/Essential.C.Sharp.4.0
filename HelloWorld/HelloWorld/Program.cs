@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MyWrite = System.Console;
 
 namespace HelloWorld
 {
@@ -232,6 +233,14 @@ namespace HelloWorld
 #if TEST_SYMBOL // #if 1 is NOT supported. It must be #if SYMBOL
 #endif
 
+        static void TestUsing()
+        {
+            Console.WriteLine("using introduces namespace level by level");
+            MyWrite.WriteLine("using alias = namespace");
+            MyWrite.WriteLine("using alias is used to disambiguate two types that have the same name"
+                    + " and to abbreviate a long name.");
+        }
+
         static int Main(string[] args)
         {
             // The full command.
@@ -243,7 +252,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestSwitch();
+            TestUsing();
 
             return 0;
         }
