@@ -243,6 +243,8 @@ namespace HelloWorld
 
         static int Main(string[] args)
         {
+#warning Try several Mains in one project.
+
             // The full command.
             if (System.Environment.GetCommandLineArgs().Length > 1)
             {
