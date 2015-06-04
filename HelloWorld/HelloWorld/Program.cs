@@ -268,6 +268,12 @@ namespace HelloWorld
             System.Console.WriteLine("ArrayItem: {0}, a: {1}, b: {2}, c: {3}, d: {4}, e: {5}", arrayItem.intM, a, b, c, d, e);
         }
 
+        static void TestNamedParameter(int i, int j)
+        {
+            System.Console.WriteLine("i: {0}, j: {1}", i, j);
+            System.Console.WriteLine("Named parameter is useful when optional parameters are used.");
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -284,7 +290,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestParameterStub();
+            TestNamedParameter(j: 5, i: 10);
 
             return 0;
         }
