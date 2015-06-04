@@ -141,6 +141,8 @@ namespace HelloWorld
             {
                 System.Console.WriteLine("ArrayItem Construction");
             }
+
+            public int intM;
         }
 
         static void TestArray()
@@ -241,6 +243,31 @@ namespace HelloWorld
                     + " and to abbreviate a long name.");
         }
 
+        static void TestParameter(ArrayItem i, ref int j, out int k, params int[] array)
+        {
+            i.intM = 10;
+            j = 20;
+            k = 30;
+
+            for (int m = 0; m < array.Length; ++ m)
+            {
+                array[m] = m + 50;
+            }
+        }
+
+        static void TestParameterStub()
+        {
+            ArrayItem arrayItem = new ArrayItem();
+            arrayItem.intM = 0;
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            int d = 0;
+            int e = 0;
+            TestParameter(arrayItem, ref a, out b, c, d, e);
+            System.Console.WriteLine("ArrayItem: {0}, a: {1}, b: {2}, c: {3}, d: {4}, e: {5}", arrayItem.intM, a, b, c, d, e);
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -257,7 +284,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestUsing();
+            TestParameterStub();
 
             return 0;
         }
