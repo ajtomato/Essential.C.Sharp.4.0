@@ -89,7 +89,7 @@ namespace HelloWorld
             }
             catch (Exception e)
             {
-                System.Console.WriteLine("A cast exception is caught: " + e);
+                System.Console.WriteLine("A cast exception is caught: " + e.Message);
             }
         }
 
@@ -117,7 +117,7 @@ namespace HelloWorld
             }
             catch (Exception e)
             {
-                System.Console.WriteLine("Parse error exception is caught: " + e.ToString());
+                System.Console.WriteLine("Parse error exception is caught: " + e.Message);
             }
 
             try
@@ -131,7 +131,7 @@ namespace HelloWorld
             }
             catch (Exception e)
             {
-                System.Console.WriteLine("Parse error exception is caught: " + e.ToString());
+                System.Console.WriteLine("Parse error exception is caught: " + e.Message);
             }
         }
 
