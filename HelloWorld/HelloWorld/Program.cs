@@ -142,7 +142,7 @@ namespace HelloWorld
                 System.Console.WriteLine("ArrayItem Construction");
             }
 
-            public int intM;
+            public int intM = 5; // The instance field can be initialized when the field is declared.
         }
 
         static void TestArray()
