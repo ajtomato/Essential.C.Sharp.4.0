@@ -274,6 +274,20 @@ namespace HelloWorld
             System.Console.WriteLine("Named parameter is useful when optional parameters are used.");
         }
 
+        static void FileWriteRead()
+        {
+            string fileName = "tmp.log";
+            System.IO.FileStream stream = new System.IO.FileStream(fileName, System.IO.FileMode.Create);
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(stream);
+            writer.WriteLine("Hello world");
+            writer.Close();
+
+            stream = new System.IO.FileStream(fileName, System.IO.FileMode.Open);
+            System.IO.StreamReader reader = new System.IO.StreamReader(stream);
+            System.Console.WriteLine(reader.ReadLine());
+            reader.Close();
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -290,7 +304,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestNamedParameter(j: 5, i: 10);
+            FileWriteRead();
 
             return 0;
         }
