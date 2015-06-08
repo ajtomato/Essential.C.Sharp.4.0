@@ -398,6 +398,18 @@ namespace HelloWorld
             System.Console.WriteLine("{0}, {1}", test.Item1, test.Item2);
         }
 
+        public static int StaticItem
+        {
+            get;
+            set;
+        }
+
+        static void TestStaticProperty()
+        {
+            StaticItem = 19;
+            System.Console.WriteLine(StaticItem);
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -414,7 +426,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestConstructor();
+            TestStaticProperty();
 
             return 0;
         }
