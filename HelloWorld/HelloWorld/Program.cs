@@ -142,6 +142,7 @@ namespace HelloWorld
                 System.Console.WriteLine("ArrayItem Construction");
             }
 
+            // If no access modifiers is placed, the declaration will default to private.
             public int intM = 5; // The instance field can be initialized when the field is declared.
         }
 
