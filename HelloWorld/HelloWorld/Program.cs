@@ -359,7 +359,22 @@ namespace HelloWorld
             TestParameter(i, ref i.Item, out i.Item1, c, d, e);
 #endif
         }
-        
+
+        static int staticInt = 9;
+
+        // static constuctor
+        static Program()
+        {
+            if (staticInt == 9)
+            {
+                System.Console.WriteLine("The static field is initialized as the declaration before static constructor.");
+            }
+            else
+            {
+                System.Console.WriteLine("The static field is NOT initialized as the declaration before static constructor: " + staticInt);
+            }
+        }
+
         static void TestConstructor()
         {
             ArrayItem i = new ArrayItem()
