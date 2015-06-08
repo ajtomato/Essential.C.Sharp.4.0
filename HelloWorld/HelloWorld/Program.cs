@@ -10,7 +10,7 @@ using MyWrite = System.Console;
 
 namespace HelloWorld
 {
-    class Program
+    static class Program
     {
         static void ConsoleInputOutput()
         {
@@ -408,6 +408,14 @@ namespace HelloWorld
         {
             StaticItem = 19;
             System.Console.WriteLine(StaticItem);
+        }
+
+        static void TestStaticClass()
+        {
+#if COMPILE_ERROR
+            Program p = new Program();
+            System.Console.WriteLine(p);
+#endif
         }
 
         static int Main(string[] args)
