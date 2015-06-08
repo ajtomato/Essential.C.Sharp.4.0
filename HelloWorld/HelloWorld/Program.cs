@@ -336,7 +336,7 @@ namespace HelloWorld
             reader.Close();
         }
 
-        static void TestShortProperty()
+        static void TestProperty()
         {
             ArrayItem i = new ArrayItem();
             i.Item1 = 10;
@@ -376,7 +376,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestShortProperty();
+            TestProperty();
 
             return 0;
         }
