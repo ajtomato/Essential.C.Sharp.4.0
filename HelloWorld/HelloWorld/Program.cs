@@ -139,7 +139,14 @@ namespace HelloWorld
         {
             public ArrayItem()
             {
-                System.Console.WriteLine("ArrayItem Construction");
+                if (intM == 5)
+                {
+                    System.Console.WriteLine("Declaration is executed before constructor");
+                }
+                else
+                {
+                    System.Console.WriteLine("Declaration is executed after constructor");
+                }
             }
 
             // Property
