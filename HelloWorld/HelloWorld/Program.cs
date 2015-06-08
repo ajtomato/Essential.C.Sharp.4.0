@@ -10,6 +10,14 @@ using MyWrite = System.Console;
 
 namespace HelloWorld
 {
+    static class DirectoryInfoExtension
+    {
+        public static void CopyTo(this System.IO.DirectoryInfo sourceDir, string target)
+        {
+            System.Console.WriteLine("Extension method is called.");
+        }
+    }
+
     static class Program
     {
         static void ConsoleInputOutput()
@@ -418,6 +426,13 @@ namespace HelloWorld
 #endif
         }
 
+        // Although extension method is placed with static, it is used as a instance method.
+        static void TestExtensionMethod()
+        {
+            System.IO.DirectoryInfo d = new System.IO.DirectoryInfo("Hello");
+            d.CopyTo("World");
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -434,7 +449,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestStaticProperty();
+            TestExtensionMethod();
 
             return 0;
         }
