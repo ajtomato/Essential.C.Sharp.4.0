@@ -359,6 +359,29 @@ namespace HelloWorld
             TestParameter(i, ref i.Item, out i.Item1, c, d, e);
 #endif
         }
+        
+        static void TestConstructor()
+        {
+            ArrayItem i = new ArrayItem()
+            {
+                Item = 9
+            };
+            System.Console.WriteLine("Object Initializers: {0}", i.Item);
+
+            List<ArrayItem> l = new List<ArrayItem>()
+            {
+                new ArrayItem(),
+                new ArrayItem()
+            };
+
+            // Anonymous Type
+            var test = new
+            {
+                Item1 = 1024,
+                Item2 = "Hello world"
+            };
+            System.Console.WriteLine("{0}, {1}", test.Item1, test.Item2);
+        }
 
         static int Main(string[] args)
         {
@@ -376,7 +399,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestProperty();
+            TestConstructor();
 
             return 0;
         }
