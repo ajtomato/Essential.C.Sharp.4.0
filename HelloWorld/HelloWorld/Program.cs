@@ -142,8 +142,22 @@ namespace HelloWorld
                 System.Console.WriteLine("ArrayItem Construction");
             }
 
+            // Property
+            public int Item
+            {
+                get
+                {
+                    return intM;
+                }
+
+                set
+                {
+                    intM = value;
+                }
+            }
+
             // If no access modifiers is placed, the declaration will default to private.
-            public int intM = 5; // The instance field can be initialized when the field is declared.
+            int intM = 5; // The instance field can be initialized when the field is declared.
         }
 
         static void TestArray()
@@ -246,7 +260,7 @@ namespace HelloWorld
 
         static void TestParameter(ArrayItem i, ref int j, out int k, params int[] array)
         {
-            i.intM = 10;
+            i.Item = 10;
             j = 20;
             k = 30;
 
@@ -259,14 +273,14 @@ namespace HelloWorld
         static void TestParameterStub()
         {
             ArrayItem arrayItem = new ArrayItem();
-            arrayItem.intM = 0;
+            arrayItem.Item = 0;
             int a = 0;
             int b = 0;
             int c = 0;
             int d = 0;
             int e = 0;
             TestParameter(arrayItem, ref a, out b, c, d, e);
-            System.Console.WriteLine("ArrayItem: {0}, a: {1}, b: {2}, c: {3}, d: {4}, e: {5}", arrayItem.intM, a, b, c, d, e);
+            System.Console.WriteLine("ArrayItem: {0}, a: {1}, b: {2}, c: {3}, d: {4}, e: {5}", arrayItem.Item, a, b, c, d, e);
         }
 
         static void TestNamedParameter(int i, int j)
