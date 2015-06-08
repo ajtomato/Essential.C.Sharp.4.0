@@ -156,6 +156,32 @@ namespace HelloWorld
                 }
             }
 
+            public int Item1
+            {
+                get;
+                set;
+            }
+
+            public int Item2
+            {
+                get
+                {
+                    return intM + 20;
+                }
+            }
+
+            public int Item3
+            {
+                get
+                {
+                    return intM + 30;
+                }
+                private set
+                {
+                    intM = value;
+                }
+            }
+
             // If no access modifiers is placed, the declaration will default to private.
             int intM = 5; // The instance field can be initialized when the field is declared.
         }
@@ -303,6 +329,30 @@ namespace HelloWorld
             reader.Close();
         }
 
+        static void TestShortProperty()
+        {
+            ArrayItem i = new ArrayItem();
+            i.Item1 = 10;
+            // Item2 is read-only. No setter. And there must be an implementation for getter.
+#if COMPILE_ERROR
+            i.Item2 = 20;
+#endif
+            // The access modifier can be specified on either getter or setter.
+#if COMPILE_ERROR
+            i.Item3 = 30;
+#endif
+            System.Console.WriteLine(i.Item1 + i.Item2 + i.Item3);
+
+            // A property may not be passed as an out or ref parameter, because there may be
+            // no memory address for a property.
+#if COMPILE_ERROR
+            int c = 0;
+            int d = 0;
+            int e = 0;
+            TestParameter(i, ref i.Item, out i.Item1, c, d, e);
+#endif
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -319,7 +369,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            FileWriteRead();
+            TestShortProperty();
 
             return 0;
         }
