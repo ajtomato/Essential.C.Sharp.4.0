@@ -451,6 +451,9 @@ namespace HelloWorld
 
             b.Function1();
             d.Function1();
+
+            b.Interface1();
+            b.Interface2();
         }
 
         static int Main(string[] args)

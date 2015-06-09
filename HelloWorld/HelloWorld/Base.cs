@@ -5,11 +5,16 @@ using System.Text;
 
 namespace HelloWorld
 {
-    class Base
+    class Base: Abstract
     {
         public Base()
         {
             System.Console.WriteLine("Base Construtor");
+        }
+
+        public override void Interface1()
+        {
+            System.Console.WriteLine("Base::Interface1");
         }
 
         public virtual void Hello()
