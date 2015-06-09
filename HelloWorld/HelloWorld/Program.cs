@@ -467,6 +467,17 @@ namespace HelloWorld
             }
         }
 
+        static void TestAs()
+        {
+            Derive d = new Derive();
+            Base b = d as Base;
+
+            if (b != null)
+            {
+                System.Console.WriteLine("as [CORRECT]");
+            }
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -483,7 +494,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestIs();
+            TestAs();
 
             return 0;
         }
