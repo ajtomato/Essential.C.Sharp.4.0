@@ -441,6 +441,18 @@ namespace HelloWorld
             d.CopyTo("World");
         }
 
+        static void TestInheritance()
+        {
+            Derive d = new Derive();
+            Base b = d;
+            b.Hello();
+            b.Property = 9;
+            System.Console.WriteLine(b.Property);
+
+            b.Function1();
+            d.Function1();
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -457,7 +469,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestConstructor();
+            TestInheritance();
 
             return 0;
         }
