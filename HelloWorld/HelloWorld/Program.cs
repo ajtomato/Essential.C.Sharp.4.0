@@ -147,6 +147,7 @@ namespace HelloWorld
 
         class ArrayItem
         {
+            private readonly int readonlyInt = 9;
             public ArrayItem()
             {
                 if (intM == 5)
@@ -157,6 +158,8 @@ namespace HelloWorld
                 {
                     System.Console.WriteLine("Declaration is executed after constructor");
                 }
+                readonlyInt = 15;
+                System.Console.WriteLine("readonly field [{0}] can be assigned in constructor.", readonlyInt);
             }
 
             // Property
@@ -170,6 +173,9 @@ namespace HelloWorld
                 set
                 {
                     intM = value;
+#if COMPILE_ERROR
+                    readonlyInt = value;
+#endif
                 }
             }
 
@@ -451,7 +457,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestExtensionMethod();
+            TestConstructor();
 
             return 0;
         }
