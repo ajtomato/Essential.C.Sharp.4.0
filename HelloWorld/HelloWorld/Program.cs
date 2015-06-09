@@ -20,6 +20,8 @@ namespace HelloWorld
 
     static class Program
     {
+        const int ArraySize = 3;
+
         static void ConsoleInputOutput()
         {
             // Input a line.
@@ -204,7 +206,7 @@ namespace HelloWorld
         static void TestArray()
         {
             string[] array1 = new string[] { "Hello", "World" };
-            string[] array2 = new string[3];
+            string[] array2 = new string[ArraySize];
 
             foreach (string s in array2)
             {
@@ -229,8 +231,8 @@ namespace HelloWorld
             System.Console.WriteLine("DataType[,] means the size of subarray is fixed.");
 
             int[][] array5; // jagged array
-            array5 = new int[3][];
-            for (int i = 0; i < 3; ++ i)
+            array5 = new int[ArraySize][];
+            for (int i = 0; i < ArraySize; ++ i)
             {
                 array5[i] = new int[i + 1];
             }
