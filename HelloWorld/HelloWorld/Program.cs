@@ -456,6 +456,17 @@ namespace HelloWorld
             b.Interface2();
         }
 
+        static void TestIs()
+        {
+            string s = "Hello";
+            object o = s;
+
+            if (o is string)
+            {
+                System.Console.WriteLine("is [CORRECT]");
+            }
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -472,7 +483,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestInheritance();
+            TestIs();
 
             return 0;
         }
