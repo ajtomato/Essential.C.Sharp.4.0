@@ -44,7 +44,12 @@ namespace HelloWorld
 
         public void InterfaceFunction1()
         {
+            System.Console.WriteLine("Derive::InterfaceFunction1");
+        }
 
+        void IInterface.InterfaceFunction2()
+        {
+            System.Console.WriteLine("Derive::InterfaceFunction2");
         }
 
         public int Property1

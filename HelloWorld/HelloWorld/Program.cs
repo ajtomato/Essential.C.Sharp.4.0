@@ -478,6 +478,19 @@ namespace HelloWorld
             }
         }
 
+        static void TestInterface()
+        {
+            Derive d = new Derive();
+
+            d.InterfaceFunction1();
+#if COMPILE_ERROR
+            d.InterfaceFunction2();
+#endif
+            IInterface i = d;
+            i.InterfaceFunction1();
+            i.InterfaceFunction2();
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -494,7 +507,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestAs();
+            TestInterface();
 
             return 0;
         }

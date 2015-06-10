@@ -10,6 +10,8 @@ namespace HelloWorld
         // No access modifier is needed. All of them are public.
         void InterfaceFunction1();
 
+        void InterfaceFunction2();
+
         int Property1
         {
             get;
