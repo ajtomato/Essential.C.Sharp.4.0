@@ -46,6 +46,7 @@
     <Compile Include="Abstract.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Derive.cs" />
+    <Compile Include="IInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

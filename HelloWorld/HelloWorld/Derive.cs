@@ -6,7 +6,7 @@ using System.Text;
 namespace HelloWorld
 {
     // Sealed classes cannot be derived from.
-    sealed class Derive: Base
+    sealed class Derive: Base, IInterface
     {
         public Derive(): base()
         {
@@ -40,6 +40,17 @@ namespace HelloWorld
         public override sealed void Function2()
         {
             System.Console.WriteLine("Derive::Function2");
+        }
+
+        public void InterfaceFunction1()
+        {
+
+        }
+
+        public int Property1
+        {
+            get;
+            set;
         }
     }
 }
