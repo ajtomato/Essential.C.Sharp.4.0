@@ -503,6 +503,23 @@ namespace HelloWorld
             number = (int)thing;
         }
 
+        [Flags]
+        enum EnumFlags
+        {
+            bit0 = 1 << 0,
+            bit1 = 1 << 1,
+            bit2 = 1 << 2,
+        }
+
+        static void TestEnumFlags()
+        {
+            EnumFlags f1 = EnumFlags.bit0 | EnumFlags.bit2;
+            System.Console.WriteLine("{0}", f1);
+
+            EnumFlags f2 = (EnumFlags)Enum.Parse(typeof(EnumFlags), f1.ToString());
+            System.Console.WriteLine("{0}", f2);
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -519,7 +536,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestBoxing();
+            TestEnumFlags();
 
             return 0;
         }
