@@ -491,6 +491,18 @@ namespace HelloWorld
             i.InterfaceFunction2();
         }
 
+        static void TestBoxing()
+        {
+            int number = 42;
+            object thing;
+
+            // Boxing
+            thing = number;
+
+            // Unboxing
+            number = (int)thing;
+        }
+
         static int Main(string[] args)
         {
 #warning Try several Mains in one project.
@@ -507,7 +519,7 @@ namespace HelloWorld
                 System.Console.WriteLine(arg);
             }
 
-            TestInterface();
+            TestBoxing();
 
             return 0;
         }
